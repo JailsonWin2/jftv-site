@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Atualização - JFTV</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .admin-section {
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .admin-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .admin-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-group label {
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .image-preview {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            border: 2px dashed #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.5rem;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .image-preview.empty {
+            background-image: none;
+        }
+        
+        .image-preview.empty::after {
+            content: 'Prévia da Imagem';
+            color: #999;
+        }
+        
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .admin-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .admin-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .admin-card-content {
+            padding: 1rem;
+        }
+        
+        .admin-card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .admin-card-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .admin-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-btn-edit {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .admin-btn-delete {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .admin-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        .instructions {
+            background-color: #fff8e1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .instructions h3 {
+            margin-bottom: 1rem;
+            color: #ff6600;
+        }
+        
+        .instructions ol {
+            margin-left: 1.5rem;
+        }
+        
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .instructions code {
+            background-color: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">JF<span>TV</span></a>
+            <div class="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="como-funciona.html">Como Funciona</a></li>
+                    <li><a href="conteudos.html">Conteúdos</a></li>
+                    <li><a href="ajuda.html">Ajuda</a></li>
+                    <li><a href="admin.html" style="color: var(--primary-color);">Painel</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main style="padding-top: 6rem; padding-bottom: 3rem;">
+        <div class="container">
+            <h1 style="margin-bottom: 2rem; text-align: center;">Painel de Atualização JFTV</h1>
+            
+            <div class="instructions">
+                <h3>Instruções para Atualização do Site</h3>
+                <p>Este painel foi criado para facilitar a atualização das imagens e informações do site JFTV. Siga as instruções abaixo:</p>
+                <ol>
+                    <li>Para atualizar imagens, você precisará substituir os arquivos na pasta <code>images</code> do seu site.</li>
+                    <li>Mantenha os mesmos nomes de arquivos para que as referências no HTML continuem funcionando.</li>
+                    <li>Para filmes e séries, use os nomes <code>filme1.jpg</code>, <code>filme2.jpg</code>, etc.</li>
+                    <li>Para canais, use os nomes <code>canal1.jpg</code>, <code>canal2.jpg</code>, etc.</li>
+                    <li>Para editar textos, você precisará modificar diretamente os arquivos HTML correspondentes.</li>
+                    <li>Após fazer as alterações, salve os arquivos e atualize o site no servidor.</li>
+                </ol>
+            </div>
+            
+            <!-- Seção de Atualização de Filmes -->
+            <div class="admin-section">
+                <h2 class="admin-title">Atualizar Filmes em Destaque</h2>
+                
+                <div class="admin-form">
+                    <div class="form-group">
+                        <label for="filme-select">Selecione o Filme para Atualizar:</label>
+                        <select id="filme-select">
+                            <option value="filme1">Filme 1</option>
+                            <option value="filme2">Filme 2</option>
+                            <option value="filme3">Filme 3</option>
+                            <option value="filme4">Filme 4</option>
+                            <option value="filme5">Filme 5</option>
+                            <option value="filme6">Filme 6</option>
+                            <option value="filme7">Filme 7</option>
+                            <option value="filme8">Filme 8</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="filme-titulo">Título do Filme:</label>
+                        <input type="text" id="filme-titulo" placeholder="Ex: Vingadores: Ultimato">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="filme-descricao">Descrição do Filme:</label>
+                        <textarea id="filme-descricao" placeholder="Breve descrição do filme..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="filme-imagem">Imagem do Filme:</label>
+                        <input type="file" id="filme-imagem" accept="image/*">
+                        <div class="image-preview empty" id="filme-preview"></div>
+                    </div>
+                    
+                    <button class="btn" onclick="alert('Esta funcionalidade requer implementação no servidor. Por favor, siga as instruções acima para atualizar manualmente.')">Atualizar Filme</button>
+                </div>
+                
+                <div class="admin-grid">
+                    <div class="admin-card">
+                        <img src="images/filme1.jpg" alt="Filme 1" class="admin-card-img">
+                        <div class="admin-card-content">
+                            <h3 class="admin-card-title">Filme 1</h3>
+                            <p>Descrição do filme recém lançado disponível na JFTV.</p>
+                            <div class="admin-card-actions">
+                                <button class="admin-btn admin-btn-edit" onclick="preencherFormFilme('filme1', 'Filme 1', 'Descrição do filme recém lançado disponível na JFTV.', 'images/filme1.jpg')">Editar</button>
+                                <button class="admin-btn admin-btn-delete" onclick="alert('Esta funcionalidade requer implementação no servidor.')">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-card">
+                        <img src="images/filme2.jpg" alt="Filme 2" class="admin-card-img">
+                        <div class="admin-card-content">
+                            <h3 class="admin-card-title">Filme 2</h3>
+                            <p>Descrição do filme recém lançado disponível na JFTV.</p>
+                            <div class="admin-card-actions">
+                                <button class="admin-btn admin-btn-edit" onclick="preencherFormFilme('filme2', 'Filme 2', 'Descrição do filme recém lançado disponível na JFTV.', 'images/filme2.jpg')">Editar</button>
+                                <button class="admin-btn admin-btn-delete" onclick="alert('Esta funcionalidade requer implementação no servidor.')">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-card">
+                        <img src="images/filme3.jpg" alt="Filme 3" class="admin-card-img">
+                        <div class="admin-card-content">
+                            <h3 class="admin-card-title">Filme 3</h3>
+                            <p>Descrição do filme recém lançado disponível na JFTV.</p>
+                            <div class="admin-card-actions">
+                                <button class="admin-btn admin-btn-edit" onclick="preencherFormFilme('filme3', 'Filme 3', 'Descrição do filme recém lançado disponível na JFTV.', 'images/filme3.jpg')">Editar</button>
+                                <button class="admin-btn admin-btn-delete" onclick="alert('Esta funcionalidade requer implementação no servidor.')">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Seção de Atualização de Canais -->
+            <div class="admin-section">
+                <h2 class="admin-title">Atualizar Canais Disponíveis</h2>
+                
+                <div class="admin-form">
+                    <div class="form-group">
+                        <label for="canal-select">Selecione o Canal para Atualizar:</label>
+                        <select id="canal-select">
+                            <option value="canal1">Canal 1</option>
+                            <option value="canal2">Canal 2</option>
+                            <option value="canal3">Canal 3</option>
+                            <option value="canal4">Canal 4</option>
+                            <option value="canal5">Canal 5</option>
+                            <option value="canal6">Canal 6</option>
+                            <option value="canal7">Canal 7</option>
+                            <option value="canal8">Canal 8</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="canal-titulo">Nome do Canal:</label>
+                        <input type="text" id="canal-titulo" placeholder="Ex: Globo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="canal-descricao">Descrição do Canal:</label>
+                        <textarea id="canal-descricao" placeholder="Breve descrição do canal..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="canal-imagem">Logo do Canal:</label>
+                        <input type="file" id="canal-imagem" accept="image/*">
+                        <div class="image-preview empty" id="canal-preview"></div>
+                    </div>
+                    
+                    <button class="btn" onclick="alert('Esta funcionalidade requer implementação no servidor. Por favor, siga as instruções acima para atualizar manualmente.')">Atualizar Canal</button>
+                </div>
+                
+                <div class="admin-grid">
+                    <div class="admin-card">
+                        <img src="images/canal1.jpg" alt="Canal 1" class="admin-card-img">
+                        <div class="admin-card-content">
+                            <h3 class="admin-card-title">Globo</h3>
+                            <p>Canal aberto com programação variada, incluindo novelas, jornalismo e entretenimento.</p>
+                            <div class="admin-card-actions">
+                                <button class="admin-btn admin-btn-edit" onclick="preencherFormCanal('canal1', 'Globo', 'Canal aberto com programação variada, incluindo novelas, jornalismo e entretenimento.', 'images/canal1.jpg')">Editar</button>
+                                <button class="admin-btn admin-btn-delete" onclick="alert('Esta funcionalidade requer implementação no servidor.')">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-card">
+                        <img src="images/canal2.jpg" alt="Canal 2" class="admin-card-img">
+                        <div class="admin-card-content">
+                            <h3 class="admin-card-title">SBT</h3>
+                            <p>Canal aberto com programação variada, incluindo programas de auditório e novelas.</p>
+                            <div class="admin-card-actions">
+                                <button class="admin-btn admin-btn-edit" onclick="preencherFormCanal('canal2', 'SBT', 'Canal aberto com programação variada, incluindo programas de auditório e novelas.', 'images/canal2.jpg')">Editar</button>
+                                <button class="admin-btn admin-btn-delete" onclick="alert('Esta funcionalidade requer implementação no servidor.')">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-card">
+                        <img src="images/canal3.jpg" alt="Canal 3" class="admin-card-img">
+                        <div class="admin-card-content">
+                            <h3 class="admin-card-title">Record</h3>
+                            <p>Canal aberto com programação variada, incluindo jornalismo, novelas e reality shows.</p>
+                            <div class="admin-card-actions">
+                                <button class="admin-btn admin-btn-edit" onclick="preencherFormCanal('canal3', 'Record', 'Canal aberto com programação variada, incluindo jornalismo, novelas e reality shows.', 'images/canal3.jpg')">Editar</button>
+                                <button class="admin-btn admin-btn-delete" onclick="alert('Esta funcionalidade requer implementação no servidor.')">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Seção de Instruções para Edição Manual -->
+            <div class="admin-section">
+                <h2 class="admin-title">Guia para Edição Manual dos Arquivos</h2>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="margin-bottom: 1rem;">Estrutura de Arquivos</h3>
+                    <pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto;">
+jftv-site/
+├── index.html           # Página inicial
+├── como-funciona.html   # Página Como Funciona
+├── conteudos.html       # Página de Conteúdos
+├── ajuda.html           # Página de Ajuda
+├── admin.html           # Este painel de administração
+├── css/
+│   └── style.css        # Estilos do site
+├── js/
+│   └── main.js          # JavaScript do site
+└── images/              # Pasta de imagens
+    ├── filme1.jpg       # Imagens de filmes
+    ├── filme2.jpg
+    ├── ...
+    ├── canal1.jpg       # Imagens de canais
+    ├── canal2.jpg
+    ├── ...
+    └── ...
+                    </pre>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Como Atualizar Manualmente</h3>
+                    <ol style="margin-left: 1.5rem;">
+                        <li>Para substituir imagens, simplesmente substitua os arquivos na pasta <code>images</code> mantendo os mesmos nomes.</li>
+                        <li>Para editar textos e títulos, abra o arquivo HTML correspondente em um editor de texto.</li>
+                        <li>Localize o texto que deseja alterar e faça as modificações necessárias.</li>
+                        <li>Salve o arquivo e atualize-o no servidor.</li>
+                    </ol>
+                    
+                    <div style="margin-top: 1.5rem; background-color: #e8f4fd; padding: 1rem; border-radius: 5px; border-left: 4px solid #3498db;">
+                        <h4 style="color: #3498db; margin-bottom: 0.5rem;">Dica:</h4>
+                        <p>Para facilitar a localização dos textos nos arquivos HTML, você pode usar a função de busca do seu editor (geralmente Ctrl+F) para encontrar o texto específico que deseja alterar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">JF<span>TV</span></div>
+                    <p>Seu serviço de IPTV premium com todos os canais do Brasil e os melhores filmes e séries.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="como-funciona.html">Como Funciona</a></li>
+                        <li><a href="conteudos.html">Conteúdos</a></li>
+                        <li><a href="ajuda.html">Ajuda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="https://wa.me/5500000000000"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="mailto:contato@jftv.com"><i class="far fa-envelope"></i> contato@jftv.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 JFTV. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Função para pré-visualizar imagem selecionada
+        function setupImagePreview(inputId, previewId) {
+            const input = document.getElementById(inputId);
+            const preview = document.getElementById(previewId);
+            
+            input.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    
+                    reader.addEventListener('load', function() {
+                        preview.style.backgroundImage = `url(${this.result})`;
+                        preview.classList.remove('empty');
+                    });
+                    
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.style.backgroundImage = '';
+                    preview.classList.add('empty');
+                }
+            });
+        }
+        
+        // Função para preencher o formulário de filmes
+        function preencherFormFilme(id, titulo, descricao, imagem) {
+            document.getElementById('filme-select').value = id;
+            document.getElementById('filme-titulo').value = titulo;
+            document.getElementById('filme-descricao').value = descricao;
+            
+            const preview = document.getElementById('filme-preview');
+            preview.style.backgroundImage = `url(${imagem})`;
+            preview.classList.remove('empty');
+            
+            // Scroll para o formulário
+            document.querySelector('.admin-form').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Função para preencher o formulário de canais
+        function preencherFormCanal(id, titulo, descricao, imagem) {
+            document.getElementById('canal-select').value = id;
+            document.getElementById('canal-titulo').value = titulo;
+            document.getElementById('canal-descricao').value = descricao;
+            
+            const preview = document.getElementById('canal-preview');
+            preview.style.backgroundImage = `url(${imagem})`;
+            preview.classList.remove('empty');
+            
+            // Scroll para o formulário
+            document.querySelectorAll('.admin-form')[1].scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            setupImagePreview('filme-imagem', 'filme-preview');
+            setupImagePreview('canal-imagem', 'canal-preview');
+        });
+    </script>
+</body>
+</html>

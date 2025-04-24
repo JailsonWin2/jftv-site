@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFTV - Seu Serviço de IPTV Premium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos para elementos animados */
+        .animated-text span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animated-text span:nth-child(1) { animation-delay: 0.1s; }
+        .animated-text span:nth-child(2) { animation-delay: 0.2s; }
+        .animated-text span:nth-child(3) { animation-delay: 0.3s; }
+        .animated-text span:nth-child(4) { animation-delay: 0.4s; }
+        .animated-text span:nth-child(5) { animation-delay: 0.5s; }
+        
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(255, 102, 0, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
+            }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .teste-gratis-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+            transform: rotate(-2deg);
+        }
+        
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .counter-box {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            width: 60px;
+            height: 60px;
+            margin: 0 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .counter-box::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: -25px;
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+        
+        .counter-box:nth-child(1)::after { content: "Horas"; }
+        .counter-box:nth-child(2)::after { content: "Minutos"; }
+        .counter-box:nth-child(3)::after { content: "Segundos"; }
+        
+        .channel-slider {
+            display: flex;
+            overflow-x: hidden;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .channel-slide {
+            flex: 0 0 auto;
+            width: 100px;
+            height: 60px;
+            margin: 0 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            animation: slideChannels 30s linear infinite;
+        }
+        
+        @keyframes slideChannels {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .interactive-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .interactive-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">JF<span>TV</span></a>
+            <div class="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="como-funciona.html">Como Funciona</a></li>
+                    <li><a href="conteudos.html">Conteúdos</a></li>
+                    <li><a href="ajuda.html">Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Hero -->
+    <section class="hero" style="background-image: url('images/hero-bg.jpg');">
+        <div class="container">
+            <div class="hero-content">
+                <div class="teste-gratis-badge floating">
+                    <i class="fas fa-clock"></i> TESTE GRÁTIS POR 2 HORAS
+                </div>
+                <h1 class="animated-text">
+                    <span>Bem-</span>
+                    <span>vindo</span>
+                    <span>à</span>
+                    <span>JF</span>
+                    <span>TV</span>
+                </h1>
+                <p>Todos os canais disponíveis no Brasil, filmes e séries atualizados semanalmente por apenas R$30 mensais.</p>
+                <div class="hero-btns">
+                    <a href="como-funciona.html" class="btn">Saiba Mais</a>
+                    <a href="https://wa.me/5500000000000" class="btn whatsapp-btn pulse-btn"><i class="fab fa-whatsapp"></i> Solicitar Teste Grátis</a>
+                </div>
+                
+                <!-- Contador Interativo -->
+                <div style="margin-top: 2rem; text-align: center;">
+                    <p style="margin-bottom: 0.5rem;">Tempo restante para solicitar seu teste grátis:</p>
+                    <div class="counter-container" id="countdown">
+                        <div class="counter-box" id="hours">02</div>
+                        <div class="counter-box" id="minutes">00</div>
+                        <div class="counter-box" id="seconds">00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Canal Slider Animado -->
+    <div class="channel-slider">
+        <div class="channel-slide" style="animation-delay: 0s;">Globo</div>
+        <div class="channel-slide" style="animation-delay: -3s;">SBT</div>
+        <div class="channel-slide" style="animation-delay: -6s;">Record</div>
+        <div class="channel-slide" style="animation-delay: -9s;">Band</div>
+        <div class="channel-slide" style="animation-delay: -12s;">HBO</div>
+        <div class="channel-slide" style="animation-delay: -15s;">ESPN</div>
+        <div class="channel-slide" style="animation-delay: -18s;">TNT</div>
+        <div class="channel-slide" style="animation-delay: -21s;">Disney+</div>
+        <div class="channel-slide" style="animation-delay: -24s;">SporTV</div>
+        <div class="channel-slide" style="animation-delay: -27s;">Fox</div>
+    </div>
+
+    <!-- Seção Destaques -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por que escolher a JFTV?</h2>
+            </div>
+            <div class="grid">
+                <div class="feature-box interactive-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3 class="feature-title">Todos os Canais do Brasil</h3>
+                    <p>Acesse todos os canais disponíveis no Brasil, incluindo esportes, filmes, séries e muito mais.</p>
+                </div>
+                <div class="feature-box interactive-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="feature-title">Filmes e Séries Atualizados</h3>
+                    <p>Novos filmes e séries adicionados semanalmente, sempre com os últimos lançamentos.</p>
+                </div>
+                <div class="feature-box interactive-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Compatível com Todos Dispositivos</h3>
+                    <p>Assista em SmartTVs, celulares e computadores com a mesma qualidade.</p>
+                </div>
+                <div class="feature-box interactive-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">Teste Grátis de 2 Horas</h3>
+                    <p>Experimente nosso serviço gratuitamente por 2 horas antes de assinar. Sem compromisso!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Lançamentos -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Últimos Lançamentos</h2>
+            </div>
+            <div class="grid">
+                <div class="card interactive-card">
+                    <img src="images/filme1.jpg" alt="Filme 1" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Filme 1</h3>
+                        <p class="card-text">Descrição do filme recém lançado disponível na JFTV.</p>
+                    </div>
+                </div>
+                <div class="card interactive-card">
+                    <img src="images/filme2.jpg" alt="Filme 2" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Filme 2</h3>
+                        <p class="card-text">Descrição do filme recém lançado disponível na JFTV.</p>
+                    </div>
+                </div>
+                <div class="card interactive-card">
+                    <img src="images/filme3.jpg" alt="Filme 3" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Filme 3</h3>
+                        <p class="card-text">Descrição do filme recém lançado disponível na JFTV.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="text-align: center; margin-top: 2rem;">
+                <a href="conteudos.html" class="btn">Ver Todos os Conteúdos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Teste Grátis -->
+    <section style="background-color: var(--primary-color); color: var(--light-color); padding: 4rem 0;">
+        <div class="container" style="text-align: center;">
+            <h2 style="margin-bottom: 1.5rem;">Experimente Antes de Assinar!</h2>
+            <p style="margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Não precisa acreditar apenas na nossa palavra. Solicite agora seu teste grátis de 2 horas e comprove a qualidade do nosso serviço sem nenhum compromisso.
+            </p>
+            <a href="https://wa.me/5500000000000" class="btn" style="background-color: var(--light-color); color: var(--primary-color); display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fab fa-whatsapp"></i> Solicitar Teste Grátis
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção CTA -->
+    <section style="background-color: var(--dark-color); color: var(--light-color); padding: 4rem 0;">
+        <div class="container" style="text-align: center;">
+            <h2 style="margin-bottom: 1.5rem;">Pronto para ter o melhor da TV?</h2>
+            <p style="margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Assine agora a JFTV e tenha acesso a todos os canais, filmes e séries por apenas R$30 mensais.
+            </p>
+            <a href="https://wa.me/5500000000000" class="btn whatsapp-btn pulse-btn" style="display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Assinar Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">JF<span>TV</span></div>
+                    <p>Seu serviço de IPTV premium com todos os canais do Brasil e os melhores filmes e séries.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="como-funciona.html">Como Funciona</a></li>
+                        <li><a href="conteudos.html">Conteúdos</a></li>
+                        <li><a href="ajuda.html">Ajuda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="https://wa.me/5500000000000"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="mailto:contato@jftv.com"><i class="far fa-envelope"></i> contato@jftv.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 JFTV. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Contador regressivo interativo
+        function startCountdown() {
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+            
+            let hours = 2;
+            let minutes = 0;
+            let seconds = 0;
+            
+            const interval = setInterval(() => {
+                if (seconds > 0) {
+                    seconds--;
+                } else {
+                    if (minutes > 0) {
+                        minutes--;
+                        seconds = 59;
+                    } else {
+                        if (hours > 0) {
+                            hours--;
+                            minutes = 59;
+                            seconds = 59;
+                        } else {
+                            // Quando o contador chegar a zero, reinicia
+                            hours = 2;
+                            minutes = 0;
+                            seconds = 0;
+                        }
+                    }
+                }
+                
+                hoursElement.textContent = hours.toString().padStart(2, '0');
+                minutesElement.textContent = minutes.toString().padStart(2, '0');
+                secondsElement.textContent = seconds.toString().padStart(2, '0');
+            }, 1000);
+        }
+        
+        // Iniciar o contador quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            startCountdown();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda - JFTV</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">JF<span>TV</span></a>
+            <div class="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="como-funciona.html">Como Funciona</a></li>
+                    <li><a href="conteudos.html">Conteúdos</a></li>
+                    <li><a href="ajuda.html">Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner da Página -->
+    <section style="background-color: var(--dark-color); padding: 8rem 0 4rem; text-align: center; color: var(--light-color);">
+        <div class="container">
+            <h1>Central de <span style="color: var(--primary-color);">Ajuda</span></h1>
+            <p style="max-width: 700px; margin: 1rem auto;">Selecione o aplicativo ou dispositivo que você precisa de ajuda e encontre soluções para os problemas mais comuns.</p>
+        </div>
+    </section>
+
+    <!-- Seção Aplicativos -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Selecione seu Dispositivo</h2>
+            </div>
+            
+            <div class="grid">
+                <!-- Smart TV -->
+                <div class="card" onclick="showFaq('smarttv')" style="cursor: pointer;">
+                    <div style="text-align: center; padding: 2rem;">
+                        <i class="fas fa-tv" style="font-size: 4rem; color: var(--primary-color);"></i>
+                        <h3 style="margin: 1.5rem 0;">Smart TV</h3>
+                        <p>Ajuda para instalação e uso em Smart TVs Samsung, LG, Sony e outras marcas.</p>
+                    </div>
+                </div>
+                
+                <!-- Android -->
+                <div class="card" onclick="showFaq('android')" style="cursor: pointer;">
+                    <div style="text-align: center; padding: 2rem;">
+                        <i class="fab fa-android" style="font-size: 4rem; color: var(--primary-color);"></i>
+                        <h3 style="margin: 1.5rem 0;">Android</h3>
+                        <p>Ajuda para instalação e uso em smartphones e tablets Android.</p>
+                    </div>
+                </div>
+                
+                <!-- iOS -->
+                <div class="card" onclick="showFaq('ios')" style="cursor: pointer;">
+                    <div style="text-align: center; padding: 2rem;">
+                        <i class="fab fa-apple" style="font-size: 4rem; color: var(--primary-color);"></i>
+                        <h3 style="margin: 1.5rem 0;">iOS (iPhone/iPad)</h3>
+                        <p>Ajuda para instalação e uso em dispositivos Apple.</p>
+                    </div>
+                </div>
+                
+                <!-- PC/Windows -->
+                <div class="card" onclick="showFaq('pc')" style="cursor: pointer;">
+                    <div style="text-align: center; padding: 2rem;">
+                        <i class="fas fa-laptop" style="font-size: 4rem; color: var(--primary-color);"></i>
+                        <h3 style="margin: 1.5rem 0;">PC/Windows</h3>
+                        <p>Ajuda para instalação e uso em computadores com Windows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção FAQs Smart TV (inicialmente oculta) -->
+    <section id="smarttv-faq" class="device-faq" style="display: none; background-color: var(--gray-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ajuda para Smart TV</h2>
+            </div>
+            
+            <div class="faq-container">
+                <!-- Pergunta 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como instalar o aplicativo na minha Smart TV?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para instalar o aplicativo na sua Smart TV, siga estes passos:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Acesse a loja de aplicativos da sua TV (Samsung Store, LG Content Store, etc.)</li>
+                                <li>Pesquise por "IPTV Player" ou "IPTV Smarters"</li>
+                                <li>Selecione o aplicativo e clique em "Instalar"</li>
+                                <li>Após a instalação, abra o aplicativo</li>
+                                <li>Selecione "Login com Xtream Codes"</li>
+                                <li>Insira as credenciais fornecidas após a assinatura</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>O aplicativo não está disponível na loja da minha TV. O que fazer?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Se o aplicativo não estiver disponível na loja da sua TV, você pode:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Usar um dispositivo externo como Fire TV Stick ou Mi Box</li>
+                                <li>Utilizar a função de espelhamento de tela do seu smartphone</li>
+                                <li>Em algumas TVs, é possível instalar aplicativos via USB</li>
+                            </ol>
+                            <p>Entre em contato conosco pelo WhatsApp para obter instruções específicas para o seu modelo de TV.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>A imagem está travando ou com baixa qualidade. Como resolver?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Se você está enfrentando problemas de travamento ou baixa qualidade, tente:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Verificar a velocidade da sua internet (recomendamos pelo menos 15 Mbps)</li>
+                                <li>Reiniciar seu roteador</li>
+                                <li>Conectar a TV via cabo de rede em vez de Wi-Fi</li>
+                                <li>Reduzir a qualidade do streaming nas configurações do aplicativo</li>
+                                <li>Fechar outros aplicativos que possam estar consumindo banda</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Esqueci minha senha. Como recuperar?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para recuperar sua senha, entre em contato conosco pelo WhatsApp. Precisaremos verificar sua identidade e então poderemos resetar sua senha ou enviar as credenciais novamente.</p>
+                            <a href="https://wa.me/5500000000000" class="btn whatsapp-btn" style="margin-top: 1rem; display: inline-flex;">
+                                <i class="fab fa-whatsapp"></i> Recuperar Senha
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção FAQs Android (inicialmente oculta) -->
+    <section id="android-faq" class="device-faq" style="display: none; background-color: var(--gray-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ajuda para Android</h2>
+            </div>
+            
+            <div class="faq-container">
+                <!-- Pergunta 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como instalar o aplicativo no meu dispositivo Android?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para instalar o aplicativo no seu dispositivo Android, siga estes passos:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Acesse a Google Play Store</li>
+                                <li>Pesquise por "IPTV Smarters Pro" ou "IPTV Player"</li>
+                                <li>Selecione o aplicativo e clique em "Instalar"</li>
+                                <li>Após a instalação, abra o aplicativo</li>
+                                <li>Selecione "Login com Xtream Codes"</li>
+                                <li>Insira as credenciais fornecidas após a assinatura</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>O aplicativo fecha sozinho ou apresenta erros. O que fazer?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Se o aplicativo está fechando sozinho ou apresentando erros, tente:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Verificar se seu Android está atualizado</li>
+                                <li>Desinstalar e reinstalar o aplicativo</li>
+                                <li>Limpar o cache do aplicativo (Configurações > Aplicativos > IPTV Player > Armazenamento > Limpar Cache)</li>
+                                <li>Verificar se há espaço suficiente no dispositivo</li>
+                                <li>Reiniciar o dispositivo</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como transmitir para minha TV a partir do meu celular?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para transmitir o conteúdo do seu celular para a TV, você pode:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Usar Chromecast: Toque no ícone de transmissão dentro do aplicativo</li>
+                                <li>Usar Smart View (Samsung) ou Screen Mirroring: Ative nas configurações rápidas do seu celular</li>
+                                <li>Conectar via cabo HDMI (requer adaptador para celular)</li>
+                            </ol>
+                            <p>Certifique-se de que seu celular e TV estejam conectados à mesma rede Wi-Fi para usar as opções sem fio.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como salvar canais favoritos?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para salvar canais como favoritos no aplicativo:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Navegue até o canal desejado</li>
+                                <li>Pressione e segure o canal</li>
+                                <li>Selecione "Adicionar aos Favoritos" no menu que aparece</li>
+                                <li>Para acessar seus favoritos, vá para a seção "Favoritos" no menu principal</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção FAQs iOS (inicialmente oculta) -->
+    <section id="ios-faq" class="device-faq" style="display: none; background-color: var(--gray-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ajuda para iOS (iPhone/iPad)</h2>
+            </div>
+            
+            <div class="faq-container">
+                <!-- Pergunta 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como instalar o aplicativo no meu iPhone ou iPad?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para instalar o aplicativo no seu dispositivo iOS, siga estes passos:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Acesse a App Store</li>
+                                <li>Pesquise por "IPTV Smarters" ou "GSE IPTV"</li>
+                                <li>Selecione o aplicativo e toque em "Obter"</li>
+                                <li>Após a instalação, abra o aplicativo</li>
+                                <li>Selecione "Login com Xtream Codes"</li>
+                                <li>Insira as credenciais fornecidas após a assinatura</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como transmitir para Apple TV?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para transmitir o conteúdo do seu iPhone/iPad para Apple TV:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Certifique-se de que seu dispositivo iOS e Apple TV estejam na mesma rede Wi-Fi</li>
+                                <li>Deslize para baixo a partir do canto superior direito da tela (ou de baixo para cima em modelos mais antigos) para abrir o Centro de Controle</li>
+                                <li>Toque em "Espelhar Tela"</li>
+                                <li>Selecione sua Apple TV na lista</li>
+                                <li>Abra o aplicativo IPTV e comece a assistir</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>O aplicativo não está disponível na App Store. O que fazer?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Se você não encontrar o aplicativo na App Store, tente estas alternativas:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Procure por aplicativos alternativos como "GSE Smart IPTV" ou "IPTV Player"</li>
+                                <li>Verifique se sua conta da App Store está configurada para o país correto</li>
+                                <li>Use o navegador Safari para acessar nossa versão web (entre em contato para obter o link)</li>
+                            </ol>
+                            <p>Entre em contato conosco pelo WhatsApp para obter assistência específica para dispositivos iOS.</p>
+                            <a href="https://wa.me/5500000000000" class="btn whatsapp-btn" style="margin-top: 1rem; display: inline-flex;">
+                                <i class="fab fa-whatsapp"></i> Obter Ajuda
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como melhorar a qualidade do streaming no iOS?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para melhorar a qualidade do streaming no seu dispositivo iOS:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Certifique-se de que seu iOS está atualizado</li>
+                                <li>Feche outros aplicativos em segundo plano</li>
+                                <li>Conecte-se a uma rede Wi-Fi estável e rápida</li>
+                                <li>Reinicie seu dispositivo e roteador</li>
+                                <li>Nas configurações do aplicativo, ajuste a qualidade do streaming de acordo com sua conexão</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção FAQs PC (inicialmente oculta) -->
+    <section id="pc-faq" class="device-faq" style="display: none; background-color: var(--gray-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ajuda para PC/Windows</h2>
+            </div>
+            
+            <div class="faq-container">
+                <!-- Pergunta 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como assistir JFTV no meu computador?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para assistir JFTV no seu computador, você tem duas opções:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li><strong>Usando VLC Media Player:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 5px;">
+                                        <li>Baixe e instale o VLC Media Player (www.videolan.org)</li>
+                                        <li>Abra o VLC</li>
+                                        <li>Clique em "Mídia" > "Abrir Fluxo de Rede"</li>
+                                        <li>Cole a URL da lista de reprodução que enviamos após a assinatura</li>
+                                        <li>Clique em "Reproduzir"</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Usando nosso player web:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 5px;">
+                                        <li>Acesse o link do player web que enviamos após a assinatura</li>
+                                        <li>Faça login com suas credenciais</li>
+                                        <li>Selecione o canal ou conteúdo desejado</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>O VLC não está reproduzindo os canais corretamente. O que fazer?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Se o VLC não está reproduzindo os canais corretamente, tente:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Atualizar o VLC para a versão mais recente</li>
+                                <li>Verificar se a URL da lista está correta e atualizada</li>
+                                <li>Reiniciar o VLC e seu computador</li>
+                                <li>Verificar sua conexão com a internet</li>
+                                <li>Desativar temporariamente o firewall ou antivírus</li>
+                                <li>Tentar um player alternativo como o Potplayer</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como conectar meu PC à TV para assistir em tela grande?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para conectar seu PC à TV e assistir em tela grande:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li><strong>Conexão com cabo HDMI:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 5px;">
+                                        <li>Conecte um cabo HDMI do seu PC à entrada HDMI da TV</li>
+                                        <li>Mude a entrada da TV para a porta HDMI correspondente</li>
+                                        <li>No Windows, pressione Windows+P e selecione "Duplicar" ou "Estender"</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Conexão sem fio:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 5px;">
+                                        <li>Se sua TV suporta Miracast, no Windows 10/11, pressione Windows+K</li>
+                                        <li>Selecione sua TV na lista de dispositivos</li>
+                                        <li>Aguarde a conexão ser estabelecida</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Usando Chromecast:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 5px;">
+                                        <li>Instale a extensão Google Cast no Chrome</li>
+                                        <li>Clique no ícone do Chromecast e selecione seu dispositivo</li>
+                                        <li>Selecione "Transmitir guia" ou "Transmitir desktop"</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como gravar programas para assistir depois?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para gravar programas usando o VLC:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li>Abra o VLC e comece a reproduzir o canal desejado</li>
+                                <li>Clique em "Mídia" > "Converter/Salvar"</li>
+                                <li>Na aba "Rede", cole a URL do canal</li>
+                                <li>Clique em "Converter/Salvar"</li>
+                                <li>Escolha o destino e formato do arquivo</li>
+                                <li>Clique em "Iniciar" para começar a gravação</li>
+                                <li>Para parar, clique no botão de parar no VLC</li>
+                            </ol>
+                            <p>Nota: Verifique as leis locais sobre gravação de conteúdo. A gravação deve ser apenas para uso pessoal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section>
+        <div class="container" style="text-align: center;">
+            <div class="section-title">
+                <h2>Ainda Precisa de Ajuda?</h2>
+            </div>
+            <p style="max-width: 700px; margin: 0 auto 2rem;">Não encontrou a solução para o seu problema? Entre em contato conosco pelo WhatsApp e nossa equipe de suporte técnico estará pronta para ajudar.</p>
+            <a href="https://wa.me/5500000000000" class="btn whatsapp-btn" style="display: inline-flex; margin: 0 auto;">
+                <i class="fab fa-whatsapp"></i> Falar com Suporte
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">JF<span>TV</span></div>
+                    <p>Seu serviço de IPTV premium com todos os canais do Brasil e os melhores filmes e séries.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="como-funciona.html">Como Funciona</a></li>
+                        <li><a href="conteudos.html">Conteúdos</a></li>
+                        <li><a href="ajuda.html">Ajuda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="https://wa.me/5500000000000"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="mailto:contato@jftv.com"><i class="far fa-envelope"></i> contato@jftv.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 JFTV. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Função para mostrar o FAQ do dispositivo selecionado
+        function showFaq(device) {
+            // Oculta todos os FAQs
+            const faqs = document.querySelectorAll('.device-faq');
+            faqs.forEach(faq => {
+                faq.style.display = 'none';
+            });
+            
+            // Mostra o FAQ selecionado
+            const selectedFaq = document.getElementById(device + '-faq');
+            if (selectedFaq) {
+                selectedFaq.style.display = 'block';
+                
+                // Scroll suave até o FAQ
+                selectedFaq.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

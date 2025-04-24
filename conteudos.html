@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdos - JFTV</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">JF<span>TV</span></a>
+            <div class="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="como-funciona.html">Como Funciona</a></li>
+                    <li><a href="conteudos.html">Conteúdos</a></li>
+                    <li><a href="ajuda.html">Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner da Página -->
+    <section style="background-color: var(--dark-color); padding: 8rem 0 4rem; text-align: center; color: var(--light-color);">
+        <div class="container">
+            <h1>Conteúdos <span style="color: var(--primary-color);">JFTV</span></h1>
+            <p style="max-width: 700px; margin: 1rem auto;">Explore nossa vasta biblioteca de canais, filmes e séries disponíveis para você assistir a qualquer momento.</p>
+        </div>
+    </section>
+
+    <!-- Seção Abas de Conteúdo -->
+    <section>
+        <div class="container">
+            <div class="content-tabs">
+                <button class="tab-btn active" data-tab="canais">Canais</button>
+                <button class="tab-btn" data-tab="filmes">Filmes</button>
+                <button class="tab-btn" data-tab="series">Séries</button>
+                <button class="tab-btn" data-tab="infantil">Infantil</button>
+                <button class="tab-btn" data-tab="esportes">Esportes</button>
+            </div>
+            
+            <!-- Conteúdo Canais -->
+            <div class="tab-content active" id="canais">
+                <div class="section-title">
+                    <h2>Canais Disponíveis</h2>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Canais Abertos</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="images/canal1.jpg" alt="Canal 1" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Globo</h3>
+                                <p class="card-text">Canal aberto com programação variada, incluindo novelas, jornalismo e entretenimento.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/canal2.jpg" alt="Canal 2" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">SBT</h3>
+                                <p class="card-text">Canal aberto com programação variada, incluindo programas de auditório e novelas.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/canal3.jpg" alt="Canal 3" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Record</h3>
+                                <p class="card-text">Canal aberto com programação variada, incluindo jornalismo, novelas e reality shows.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/canal4.jpg" alt="Canal 4" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Band</h3>
+                                <p class="card-text">Canal aberto com programação variada, incluindo jornalismo, esportes e entretenimento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Canais de Filmes</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="images/canal5.jpg" alt="Canal 5" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">HBO</h3>
+                                <p class="card-text">Canal premium com os melhores filmes e séries exclusivas.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/canal6.jpg" alt="Canal 6" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Telecine</h3>
+                                <p class="card-text">Pacote de canais com os melhores e mais recentes lançamentos do cinema.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/canal7.jpg" alt="Canal 7" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">TNT</h3>
+                                <p class="card-text">Canal com filmes de sucesso e transmissões esportivas.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/canal8.jpg" alt="Canal 8" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Megapix</h3>
+                                <p class="card-text">Canal com os maiores sucessos do cinema mundial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Canais de Esportes</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="images/canal9.jpg" alt="Canal 9" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">SporTV</h3>
+                                <p class="card-text">Canal com transmissões esportivas variadas, incluindo futebol, vôlei e mais.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/canal10.jpg" alt="Canal 10" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">ESPN</h3>
+                                <p class="card-text">Canal com transmissões esportivas nacionais e internacionais.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/canal11.jpg" alt="Canal 11" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Fox Sports</h3>
+                                <p class="card-text">Canal com transmissões esportivas e programas de debate.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/canal12.jpg" alt="Canal 12" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Premiere</h3>
+                                <p class="card-text">Canal com transmissões exclusivas de campeonatos de futebol.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Conteúdo Filmes -->
+            <div class="tab-content" id="filmes">
+                <div class="section-title">
+                    <h2>Filmes em Destaque</h2>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Lançamentos</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="images/filme1.jpg" alt="Filme 1" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Lançamento 1</h3>
+                                <p class="card-text">Descrição do filme recém lançado disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/filme2.jpg" alt="Filme 2" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Lançamento 2</h3>
+                                <p class="card-text">Descrição do filme recém lançado disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/filme3.jpg" alt="Filme 3" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Lançamento 3</h3>
+                                <p class="card-text">Descrição do filme recém lançado disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/filme4.jpg" alt="Filme 4" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Lançamento 4</h3>
+                                <p class="card-text">Descrição do filme recém lançado disponível na JFTV.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Mais Assistidos</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="images/filme5.jpg" alt="Filme 5" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Popular 1</h3>
+                                <p class="card-text">Descrição do filme popular disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/filme6.jpg" alt="Filme 6" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Popular 2</h3>
+                                <p class="card-text">Descrição do filme popular disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/filme7.jpg" alt="Filme 7" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Popular 3</h3>
+                                <p class="card-text">Descrição do filme popular disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/filme8.jpg" alt="Filme 8" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Popular 4</h3>
+                                <p class="card-text">Descrição do filme popular disponível na JFTV.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Conteúdo Séries -->
+            <div class="tab-content" id="series">
+                <div class="section-title">
+                    <h2>Séries em Destaque</h2>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Novas Temporadas</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="images/serie1.jpg" alt="Série 1" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Série 1</h3>
+                                <p class="card-text">Descrição da série com nova temporada disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/serie2.jpg" alt="Série 2" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Série 2</h3>
+                                <p class="card-text">Descrição da série com nova temporada disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/serie3.jpg" alt="Série 3" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Série 3</h3>
+                                <p class="card-text">Descrição da série com nova temporada disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/serie4.jpg" alt="Série 4" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Série 4</h3>
+                                <p class="card-text">Descrição da série com nova temporada disponível na JFTV.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Séries Completas</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="images/serie5.jpg" alt="Série 5" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Série Completa 1</h3>
+                                <p class="card-text">Descrição da série completa disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/serie6.jpg" alt="Série 6" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Série Completa 2</h3>
+                                <p class="card-text">Descrição da série completa disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/serie7.jpg" alt="Série 7" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Série Completa 3</h3>
+                                <p class="card-text">Descrição da série completa disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/serie8.jpg" alt="Série 8" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Série Completa 4</h3>
+                                <p class="card-text">Descrição da série completa disponível na JFTV.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Conteúdo Infantil -->
+            <div class="tab-content" id="infantil">
+                <div class="section-title">
+                    <h2>Conteúdo Infantil</h2>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Canais Infantis</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="images/infantil1.jpg" alt="Canal Infantil 1" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Cartoon Network</h3>
+                                <p class="card-text">Canal infantil com desenhos animados e séries para crianças.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/infantil2.jpg" alt="Canal Infantil 2" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Discovery Kids</h3>
+                                <p class="card-text">Canal infantil com programação educativa para crianças.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/infantil3.jpg" alt="Canal Infantil 3" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Disney Channel</h3>
+                                <p class="card-text">Canal infantil com filmes e séries da Disney.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/infantil4.jpg" alt="Canal Infantil 4" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Nickelodeon</h3>
+                                <p class="card-text">Canal infantil com desenhos animados e séries para crianças.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Filmes Infantis</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="images/infantil5.jpg" alt="Filme Infantil 1" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Infantil 1</h3>
+                                <p class="card-text">Descrição do filme infantil disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/infantil6.jpg" alt="Filme Infantil 2" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Infantil 2</h3>
+                                <p class="card-text">Descrição do filme infantil disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/infantil7.jpg" alt="Filme Infantil 3" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Infantil 3</h3>
+                                <p class="card-text">Descrição do filme infantil disponível na JFTV.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/infantil8.jpg" alt="Filme Infantil 4" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Filme Infantil 4</h3>
+                                <p class="card-text">Descrição do filme infantil disponível na JFTV.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Conteúdo Esportes -->
+            <div class="tab-content" id="esportes">
+                <div class="section-title">
+                    <h2>Conteúdo Esportivo</h2>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Campeonatos de Futebol</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="images/esporte1.jpg" alt="Esporte 1" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Brasileirão</h3>
+                                <p class="card-text">Transmissão completa de todos os jogos do Campeonato Brasileiro.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/esporte2.jpg" alt="Esporte 2" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Champions League</h3>
+                                <p class="card-text">Transmissão completa de todos os jogos da Liga dos Campeões da UEFA.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/esporte3.jpg" alt="Esporte 3" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Copa do Brasil</h3>
+                                <p class="card-text">Transmissão completa de todos os jogos da Copa do Brasil.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/esporte4.jpg" alt="Esporte 4" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Libertadores</h3>
+                                <p class="card-text">Transmissão completa de todos os jogos da Copa Libertadores da América.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Outros Esportes</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="images/esporte5.jpg" alt="Esporte 5" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">NBA</h3>
+                                <p class="card-text">Transmissão dos jogos da liga de basquete americana.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/esporte6.jpg" alt="Esporte 6" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">UFC</h3>
+                                <p class="card-text">Transmissão de todos os eventos de MMA do UFC.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/esporte7.jpg" alt="Esporte 7" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Fórmula 1</h3>
+                                <p class="card-text">Transmissão de todas as corridas da temporada de Fórmula 1.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/esporte8.jpg" alt="Esporte 8" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Vôlei</h3>
+                                <p class="card-text">Transmissão dos principais campeonatos de vôlei nacionais e internacionais.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção CTA -->
+    <section style="background-color: var(--dark-color); color: var(--light-color); padding: 4rem 0;">
+        <div class="container" style="text-align: center;">
+            <h2 style="margin-bottom: 1.5rem;">Quer ter acesso a todo esse conteúdo?</h2>
+            <p style="margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Assine agora a JFTV e tenha acesso a todos os canais, filmes e séries por apenas R$30 mensais.
+            </p>
+            <a href="https://wa.me/5500000000000" class="btn whatsapp-btn" style="display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Assinar Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">JF<span>TV</span></div>
+                    <p>Seu serviço de IPTV premium com todos os canais do Brasil e os melhores filmes e séries.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="como-funciona.html">Como Funciona</a></li>
+                        <li><a href="conteudos.html">Conteúdos</a></li>
+                        <li><a href="ajuda.html">Ajuda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="https://wa.me/5500000000000"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="mailto:contato@jftv.com"><i class="far fa-envelope"></i> contato@jftv.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 JFTV. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
